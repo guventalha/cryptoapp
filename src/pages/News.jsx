@@ -4,7 +4,7 @@ import moment from 'moment';
 import { useGetCryptoNewsQuery } from '../services/CryptoNewsApi';
 import { useGetCryptosQuery } from '../services/CryptoApi';
 
-const { Text, Title } = Typography;
+const { Text } = Typography;
 const { Option } = Select;
 const demoImage =
   'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';

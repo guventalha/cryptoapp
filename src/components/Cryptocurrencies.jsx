@@ -31,10 +31,10 @@ function Cryptocurrencies({ simplified }) {
         </div>
       )}
 
-      <Row gutter={[32, 32]} className="crypto-card-container">
+      <Row gutter={[24, 24]} className="crypto-card-container">
         {cryptos?.map((currency) => {
           return (
-            <Col xs={24} sm={12} lg={6} className="crypto-card">
+            <Col xs={24} sm={12} lg={8} xl={6} className="crypto-card">
               <Link to={`/crypto/${currency.uuid}`}>
                 <Card
                   style={{ border: 'none', borderRadius: '10px' }}

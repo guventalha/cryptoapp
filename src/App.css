@@ -318,9 +318,9 @@ a:hover {
 .crypto-card-container {
   min-height: 65vh !important;
 }
-.crypto-card {
+/* .crypto-card {
   min-width: 250px;
-}
+} */
 .crypto-card .crypto-image {
   width: 35px;
 }
@@ -370,7 +370,7 @@ a:hover {
 
   .main {
     flex: 1;
-    margin-top: 90px;
+    margin-top: 8vh;
     margin-left: 0px;
     margin-right: 10px;
   }
@@ -378,7 +378,9 @@ a:hover {
   .nav-menu-button {
     display: block !important;
   }
-
+  .routes {
+    padding-left: 0rem;
+  }
   .nav-container {
     height: 8vh;
     position: fixed;

@@ -11,7 +11,7 @@ import {
 import icon from '../assets/cryptocurrency.png';
 
 const Navbar = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="nav-container">
@@ -36,13 +36,19 @@ const Navbar = () => {
         className={open ? 'nav-menu-opened' : 'nav-menu-closed'}
       >
         <Menu.Item icon={<HomeOutlined />}>
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={() => setOpen(false)}>
+            Home
+          </Link>
         </Menu.Item>
         <Menu.Item icon={<FundOutlined />}>
-          <Link to="/cryptocurrencies">Cryptocurrencies</Link>
+          <Link to="/cryptocurrencies" onClick={() => setOpen(false)}>
+            Cryptocurrencies
+          </Link>
         </Menu.Item>
         <Menu.Item icon={<BulbOutlined />}>
-          <Link to="/news">News</Link>
+          <Link to="/news" onClick={() => setOpen(false)}>
+            News
+          </Link>
         </Menu.Item>
       </Menu>
     </div>
