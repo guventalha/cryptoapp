@@ -1,34 +1,34 @@
-import React from "react";
-import { Button, Menu, Typography, Avatar } from "antd";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Button, Menu, Typography, Avatar } from 'antd';
+import { Link } from 'react-router-dom';
 
 import {
   HomeOutlined,
-  MoneyCollectOutlined,
   BulbOutlined,
   FundOutlined,
   MenuOutlined,
-} from "@ant-design/icons";
-import icon from "../assets/cryptocurrency.png";
+} from '@ant-design/icons';
+import icon from '../assets/cryptocurrency.png';
 
 const Navbar = () => {
   return (
     <div className="nav-container">
       <div className="logo-container">
         <Avatar src={icon} size="large" />
-        <Typography.Title level={2} className="logo">
+        <Typography.Title level={3} className="logo">
           <Link to="/">Crypto Universe</Link>
         </Typography.Title>
+        <Button className="nav-menu-button">
+          <MenuOutlined style={{ color: '#fff', fontSize: '1.5rem' }} />
+        </Button>
       </div>
-      <Menu theme="dark">
+
+      <Menu theme="dark" className="nav-menu">
         <Menu.Item icon={<HomeOutlined />}>
           <Link to="/">Home</Link>
         </Menu.Item>
         <Menu.Item icon={<FundOutlined />}>
           <Link to="/cryptocurrencies">Cryptocurrencies</Link>
-        </Menu.Item>
-        <Menu.Item icon={<MoneyCollectOutlined />}>
-          <Link to="/exchanges">Exchanges</Link>
         </Menu.Item>
         <Menu.Item icon={<BulbOutlined />}>
           <Link to="/news">News</Link>
