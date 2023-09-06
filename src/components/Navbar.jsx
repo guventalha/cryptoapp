@@ -17,9 +17,9 @@ const Navbar = () => {
     <div className="nav-container">
       <div className="logo-container">
         <Avatar src={icon} size="large" />
-        <h2 className="logo">
+        <h3 className="logo">
           <Link to="/">Crypto Universe</Link>
-        </h2>
+        </h3>
         <button
           className="nav-menu-button"
           onClick={() => {
@@ -30,6 +30,18 @@ const Navbar = () => {
           <MenuOutlined style={{ color: '#fff', fontSize: '1.5rem' }} />
         </button>
       </div>
+
+      <Menu theme="dark" className="nav-menu-desktop">
+        <Menu.Item icon={<HomeOutlined />}>
+          <Link to="/">Home</Link>
+        </Menu.Item>
+        <Menu.Item icon={<FundOutlined />}>
+          <Link to="/cryptocurrencies">Cryptocurrencies</Link>
+        </Menu.Item>
+        <Menu.Item icon={<BulbOutlined />}>
+          <Link to="/news">News</Link>
+        </Menu.Item>
+      </Menu>
 
       <Menu
         theme="dark"
