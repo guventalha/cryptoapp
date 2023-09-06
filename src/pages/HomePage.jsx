@@ -14,7 +14,7 @@ function HomePage() {
   if (isFetching) return 'Loading...';
 
   return (
-    <>
+    <div className="page-container">
       <Title level={2} className="heading">
         {' '}
         Global Crypto Stats{' '}
@@ -71,7 +71,7 @@ function HomePage() {
         </Title>
       </div>
       <News simplified />
-    </>
+    </div>
   );
 }
 

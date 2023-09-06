@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { Select, Typography, Row, Col, Avatar, Card } from "antd";
-import moment from "moment";
-import { useGetCryptoNewsQuery } from "../services/CryptoNewsApi";
-import { useGetCryptosQuery } from "../services/CryptoApi";
+import React, { useState } from 'react';
+import { Select, Typography, Row, Col, Avatar, Card } from 'antd';
+import moment from 'moment';
+import { useGetCryptoNewsQuery } from '../services/CryptoNewsApi';
+import { useGetCryptosQuery } from '../services/CryptoApi';
 
 const { Text, Title } = Typography;
 const { Option } = Select;
 const demoImage =
-  "https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News";
+  'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
 
 function News({ simplified }) {
-  const [newsCategory, setNewsCategory] = useState("Cryptocurrency");
+  const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
 
   const { data: cryptoNews } = useGetCryptoNewsQuery({
     newsCategory,
@@ -19,7 +19,7 @@ function News({ simplified }) {
 
   const { data } = useGetCryptosQuery(100);
 
-  if (!cryptoNews?.value) return "Loading...";
+  if (!cryptoNews?.value) return 'Loading...';
 
   return (
     <Row gutter={[24, 24]}>
@@ -48,12 +48,13 @@ function News({ simplified }) {
           <Card hoverable className="news-card">
             <a href={news.url} target="_blank" rel="noreferrer">
               <div className="news-image-container">
-                <Title className="nes-title" level={4}>
-                  {news.name}{" "}
-                </Title>
+                <h3 className="news-title" level={4}>
+                  {news.name}{' '}
+                </h3>
                 <img
                   src={news?.image?.thumbnail?.contentUrl || demoImage}
-                  alt="news image"
+                  alt="newsimage"
+                  className="news-image"
                 />
               </div>
               <p>
@@ -71,8 +72,8 @@ function News({ simplified }) {
                     alt="news"
                   />
                   <Text>
-                    {" "}
-                    {moment(news.datePublished).startOf("ss").fromNow()}
+                    {' '}
+                    {moment(news.datePublished).startOf('ss').fromNow()}
                   </Text>
                 </div>
               </div>

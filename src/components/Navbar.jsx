@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button, Menu, Typography, Avatar } from 'antd';
+import React, { useState } from 'react';
+import { Menu, Avatar } from 'antd';
 import { Link } from 'react-router-dom';
 
 import {
@@ -11,19 +11,30 @@ import {
 import icon from '../assets/cryptocurrency.png';
 
 const Navbar = () => {
+  const [open, setOpen] = useState(true);
+
   return (
     <div className="nav-container">
       <div className="logo-container">
         <Avatar src={icon} size="large" />
-        <Typography.Title level={3} className="logo">
+        <h2 className="logo">
           <Link to="/">Crypto Universe</Link>
-        </Typography.Title>
-        <Button className="nav-menu-button">
+        </h2>
+        <button
+          className="nav-menu-button"
+          onClick={() => {
+            console.log(open);
+            setOpen((prev) => !prev);
+          }}
+        >
           <MenuOutlined style={{ color: '#fff', fontSize: '1.5rem' }} />
-        </Button>
+        </button>
       </div>
 
-      <Menu theme="dark" className="nav-menu">
+      <Menu
+        theme="dark"
+        className={open ? 'nav-menu-opened' : 'nav-menu-closed'}
+      >
         <Menu.Item icon={<HomeOutlined />}>
           <Link to="/">Home</Link>
         </Menu.Item>
