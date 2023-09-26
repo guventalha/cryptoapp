@@ -7,6 +7,9 @@ import News from './News';
 import { useGetCryptosQuery } from '../services/CryptoApi';
 import Loading from '../components/Loading';
 
+//Burası ilk branchten gelen
+const deneme = 'deneme';
+
 const { Title } = Typography;
 function HomePage() {
   const { data, isFetching } = useGetCryptosQuery(10);
