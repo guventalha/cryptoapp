@@ -14,7 +14,8 @@ const { Title } = Typography;
 function HomePage() {
   const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
-
+  //bu da ikinci
+  const bilmemne = 'ikinci';
   if (isFetching) return <Loading />;
 
   return (
